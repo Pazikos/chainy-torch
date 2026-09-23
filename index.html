@@ -1,708 +1,976 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Чайный Торч — китайский чай в Казахстане</title>
-
-    <meta name="description"
-          content="Чайный Торч — китайский чай в Казахстане. Тигуаньинь, Да Хун Пао, Габа, Шу Пуэр и чайные блинчики.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #07100c;
-            color: #f5f1e8;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            background: rgba(5, 13, 10, 0.88);
-            backdrop-filter: blur(15px);
+<title>Чайный Торч — китайский чай</title>
 
-            border-bottom: 1px solid rgba(197, 158, 79, 0.15);
-        }
+<style>
 
-        .nav {
-            max-width: 1200px;
-            margin: auto;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            height: 75px;
+html {
+    scroll-behavior: smooth;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+body {
+    font-family: Arial, sans-serif;
+    background: #07100c;
+    color: #f5f1e8;
+    overflow-x: hidden;
+}
 
-            padding: 0 25px;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .logo {
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
+button {
+    font-family: inherit;
+}
 
-        .logo span {
-            color: #c9a45c;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-        .nav-links a {
-            color: #c8c8c8;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+    height: 70px;
 
-        .nav-links a:hover {
-            color: #d2ad68;
-        }
+    background: rgba(5, 13, 10, 0.96);
+    backdrop-filter: blur(15px);
 
-        .contact-button {
-            background: #c9a45c;
-            color: #101510 !important;
+    border-bottom: 1px solid #203026;
 
-            padding: 11px 20px;
-            border-radius: 30px;
+    z-index: 9999;
+}
 
-            font-weight: 700 !important;
+.nav {
+    max-width: 1200px;
+    height: 70px;
 
-            transition: 0.3s;
-        }
+    margin: auto;
+    padding: 0 20px;
 
-        .contact-button:hover {
-            transform: translateY(-2px);
-            background: #e0bd78;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        /* =========================
-           HERO
-        ========================= */
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
 
-        .hero {
-            min-height: 100vh;
+.logo span {
+    color: #c9a45c;
+}
 
-            display: flex;
-            align-items: center;
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-            padding: 130px 25px 80px;
+.nav-link {
+    color: #aaa;
+    font-size: 14px;
+}
 
-            position: relative;
-            overflow: hidden;
+.nav-contact {
+    background: #c9a45c;
+    color: #111;
 
-            background:
-                radial-gradient(
-                    circle at 75% 40%,
-                    rgba(38, 83, 55, 0.25),
-                    transparent 40%
-                ),
-                #07100c;
-        }
+    border: 0;
+    border-radius: 25px;
 
-        .hero::before {
-            content: "";
+    padding: 11px 17px;
 
-            position: absolute;
+    font-weight: bold;
 
-            width: 500px;
-            height: 500px;
+    cursor: pointer;
 
-            border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+}
 
-            right: -150px;
-            top: 100px;
+/* =========================
+   CART BUTTON
+========================= */
 
-            border: 1px solid rgba(201, 164, 92, 0.12);
-        }
+.cart-button {
+    position: relative;
 
-        .hero-container {
-            width: 100%;
-            max-width: 1200px;
+    border: 1px solid #35463c;
+    background: #101b15;
 
-            margin: auto;
+    color: white;
 
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+    border-radius: 25px;
 
-            gap: 50px;
+    padding: 10px 15px;
 
-            align-items: center;
-        }
+    cursor: pointer;
 
-        .hero-label {
-            display: inline-block;
+    font-weight: bold;
 
-            color: #c9a45c;
+    -webkit-tap-highlight-color: transparent;
+}
 
-            border: 1px solid rgba(201, 164, 92, 0.35);
+.cart-count {
+    position: absolute;
 
-            padding: 7px 14px;
+    top: -7px;
+    right: -7px;
 
-            border-radius: 20px;
+    min-width: 20px;
+    height: 20px;
 
-            font-size: 12px;
-            letter-spacing: 1px;
+    background: #c9a45c;
+    color: #111;
 
-            margin-bottom: 22px;
-        }
+    border-radius: 50%;
 
-        .hero h1 {
-            font-size: clamp(48px, 7vw, 88px);
+    display: none;
+    align-items: center;
+    justify-content: center;
 
-            line-height: 0.95;
+    font-size: 11px;
+    font-weight: bold;
+}
 
-            letter-spacing: -4px;
+/* =========================
+   HERO
+========================= */
 
-            margin-bottom: 25px;
-        }
+.hero {
+    min-height: 100vh;
 
-        .hero h1 span {
-            color: #c9a45c;
-        }
+    padding: 130px 20px 70px;
 
-        .hero p {
-            max-width: 580px;
+    display: flex;
+    align-items: center;
 
-            color: #aeb5af;
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(40, 90, 57, .25),
+            transparent 40%
+        );
+}
 
-            font-size: 18px;
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
 
-            margin-bottom: 35px;
-        }
+    margin: auto;
 
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
 
-        .main-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+    gap: 40px;
 
-            background: #c9a45c;
-            color: #101510;
+    align-items: center;
+}
 
-            padding: 15px 25px;
+.hero-label {
+    display: inline-block;
 
-            border-radius: 8px;
+    border: 1px solid #465b4b;
 
-            font-weight: 800;
+    color: #c9a45c;
 
-            transition: 0.3s;
-        }
+    border-radius: 20px;
 
-        .main-button:hover {
-            transform: translateY(-3px);
-            background: #e0bd78;
-        }
+    padding: 7px 14px;
 
-        .second-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+    font-size: 11px;
+    letter-spacing: 1.5px;
 
-            border: 1px solid #35463c;
+    margin-bottom: 20px;
+}
 
-            padding: 15px 25px;
+.hero h1 {
+    font-size: clamp(55px, 8vw, 90px);
 
-            border-radius: 8px;
+    line-height: .9;
 
-            color: #ddd;
+    letter-spacing: -5px;
 
-            transition: 0.3s;
-        }
+    margin-bottom: 25px;
+}
 
-        .second-button:hover {
-            border-color: #c9a45c;
-            color: #c9a45c;
-        }
+.hero h1 span {
+    color: #c9a45c;
+}
 
-        /* TEA VISUAL */
+.hero p {
+    max-width: 570px;
 
-        .tea-visual {
-            min-height: 450px;
+    color: #a5afa9;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    font-size: 18px;
 
-            position: relative;
-        }
+    margin-bottom: 30px;
+}
 
-        .tea-circle {
-            width: 360px;
-            height: 360px;
+/* =========================
+   HERO BUTTONS
+========================= */
 
-            border-radius: 50%;
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 
-            border: 1px solid rgba(201, 164, 92, 0.25);
+    position: relative;
+    z-index: 10;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.hero-button {
+    display: inline-flex;
 
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(42, 76, 53, 0.35),
-                    rgba(7, 16, 12, 0.2) 60%
-                );
+    align-items: center;
+    justify-content: center;
 
-            box-shadow:
-                0 0 100px rgba(37, 86, 55, 0.2);
-        }
+    min-height: 50px;
 
-        .teapot {
-            font-size: 145px;
+    padding: 14px 22px;
 
-            filter: drop-shadow(
-                0 20px 30px rgba(0, 0, 0, 0.5)
-            );
-        }
+    border-radius: 8px;
 
-        .steam {
-            position: absolute;
+    font-weight: 800;
 
-            font-size: 70px;
+    cursor: pointer;
 
-            top: 45px;
+    border: 0;
 
-            opacity: 0.35;
+    touch-action: manipulation;
 
-            animation: steam 3s infinite ease-in-out;
-        }
+    -webkit-tap-highlight-color: transparent;
+}
 
-        @keyframes steam {
-            0%,100% {
-                transform: translateY(10px);
-                opacity: 0.15;
-            }
+.hero-primary {
+    background: #c9a45c;
+    color: #111;
+}
 
-            50% {
-                transform: translateY(-15px);
-                opacity: 0.4;
-            }
-        }
+.hero-secondary {
+    border: 1px solid #46584c;
+    background: transparent;
+    color: white;
+}
 
-        /* =========================
-           SECTION
-        ========================= */
+.hero-button:active {
+    transform: scale(.97);
+}
 
-        section {
-            padding: 100px 25px;
-        }
+/* =========================
+   TEAPOT
+========================= */
 
-        .section-container {
-            max-width: 1200px;
-            margin: auto;
-        }
+.tea-visual {
+    min-height: 400px;
 
-        .section-heading {
-            margin-bottom: 50px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .section-heading small {
-            color: #c9a45c;
+.tea-circle {
+    width: 340px;
+    height: 340px;
 
-            text-transform: uppercase;
+    border-radius: 50%;
 
-            letter-spacing: 2px;
+    border: 1px solid #394d40;
 
-            font-size: 12px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .section-heading h2 {
-            font-size: clamp(34px, 5vw, 55px);
+    background:
+        radial-gradient(
+            circle,
+            rgba(40, 80, 50, .4),
+            transparent 65%
+        );
+}
 
-            line-height: 1;
+.teapot {
+    font-size: 130px;
+}
 
-            margin-top: 10px;
-        }
+/* =========================
+   SECTIONS
+========================= */
 
-        .section-heading p {
-            color: #929c95;
+section {
+    padding: 90px 20px;
+}
 
-            max-width: 600px;
+.section-container {
+    max-width: 1200px;
+    margin: auto;
+}
 
-            margin-top: 15px;
-        }
+.section-title small {
+    color: #c9a45c;
 
-        /* =========================
-           PRODUCTS
-        ========================= */
+    letter-spacing: 2px;
 
-        #catalog {
-            background: #09130e;
-        }
+    font-size: 11px;
+}
 
-        .products {
-            display: grid;
+.section-title h2 {
+    font-size: clamp(36px, 5vw, 58px);
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    line-height: 1;
 
-            gap: 20px;
-        }
+    margin-top: 10px;
+}
 
-        .product {
-            background: #0d1913;
+.section-title p {
+    color: #8f9a93;
 
-            border: 1px solid #1b2b22;
+    max-width: 600px;
 
-            border-radius: 14px;
+    margin-top: 15px;
+}
 
-            padding: 28px;
+/* =========================
+   PRODUCTS
+========================= */
 
-            display: flex;
-            flex-direction: column;
+#catalog {
+    background: #09130e;
+}
 
-            min-height: 390px;
+.products {
+    margin-top: 45px;
 
-            transition: 0.3s;
-        }
+    display: grid;
 
-        .product:hover {
-            transform: translateY(-7px);
+    grid-template-columns:
+        repeat(3, 1fr);
 
-            border-color:
-                rgba(201, 164, 92, 0.5);
+    gap: 18px;
+}
 
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.3);
-        }
+.product {
+    background: #0d1913;
 
-        .product-icon {
-            width: 65px;
-            height: 65px;
+    border: 1px solid #1d2d23;
 
-            border-radius: 50%;
+    border-radius: 14px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    padding: 25px;
 
-            background: #16271c;
+    display: flex;
+    flex-direction: column;
 
-            font-size: 30px;
+    min-height: 390px;
 
-            margin-bottom: 25px;
-        }
+    transition: .25s;
+}
 
-        .product h3 {
-            font-size: 22px;
+.product:hover {
+    border-color: #806d48;
+    transform: translateY(-4px);
+}
 
-            margin-bottom: 10px;
-        }
+.product-icon {
+    width: 60px;
+    height: 60px;
 
-        .product p {
-            color: #909b94;
+    border-radius: 50%;
 
-            font-size: 14px;
+    background: #16271c;
 
-            flex-grow: 1;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .product-price {
-            font-size: 25px;
+    font-size: 28px;
 
-            color: #d4b16b;
+    margin-bottom: 20px;
+}
 
-            font-weight: 800;
+.product h3 {
+    font-size: 22px;
 
-            margin: 25px 0 18px;
-        }
+    margin-bottom: 10px;
+}
 
-        .product-price small {
-            font-size: 13px;
+.product-description {
+    color: #8e9992;
 
-            color: #7d8881;
+    font-size: 14px;
 
-            font-weight: normal;
-        }
+    flex: 1;
+}
 
-        .order-button {
-            width: 100%;
+.product-price {
+    color: #d5b36c;
 
-            border: 1px solid #3a493f;
+    font-size: 24px;
 
-            background: transparent;
+    font-weight: bold;
 
-            color: #f0eee8;
+    margin: 22px 0 15px;
+}
 
-            padding: 12px;
+.product-price span {
+    color: #778078;
 
-            border-radius: 7px;
+    font-size: 12px;
 
-            cursor: pointer;
+    font-weight: normal;
+}
 
-            font-size: 14px;
+.add-cart {
+    width: 100%;
 
-            font-weight: 700;
+    padding: 13px;
 
-            transition: 0.3s;
-        }
+    border-radius: 7px;
 
-        .order-button:hover {
-            background: #c9a45c;
+    border: 1px solid #425246;
 
-            border-color: #c9a45c;
+    background: transparent;
 
-            color: #101510;
-        }
+    color: white;
 
-        /* =========================
-           ABOUT
-        ========================= */
+    cursor: pointer;
 
-        .about {
-            display: grid;
+    font-weight: bold;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    transition: .2s;
 
-            gap: 20px;
-        }
+    touch-action: manipulation;
 
-        .about-card {
-            padding: 30px;
+    -webkit-tap-highlight-color: transparent;
+}
 
-            border: 1px solid #1d2c23;
+.add-cart:hover {
+    background: #c9a45c;
+    color: #111;
+    border-color: #c9a45c;
+}
 
-            border-radius: 12px;
+.add-cart:active {
+    transform: scale(.97);
+}
 
-            background: #0b1510;
-        }
+/* =========================
+   ABOUT
+========================= */
 
-        .about-card .number {
-            font-size: 35px;
+.about {
+    margin-top: 45px;
 
-            color: #c9a45c;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-            margin-bottom: 20px;
-        }
+    gap: 18px;
+}
 
-        .about-card h3 {
-            margin-bottom: 10px;
-        }
+.about-card {
+    background: #0b1510;
 
-        .about-card p {
-            color: #89948d;
+    border: 1px solid #1d2d23;
 
-            font-size: 14px;
-        }
+    padding: 30px;
 
-        /* =========================
-           CTA
-        ========================= */
+    border-radius: 12px;
+}
 
-        .cta {
-            background:
-                linear-gradient(
-                    135deg,
-                    #13271a,
-                    #09120d
-                );
+.about-number {
+    color: #c9a45c;
 
-            border-top:
-                1px solid #1e3326;
+    font-size: 35px;
 
-            border-bottom:
-                1px solid #1e3326;
+    margin-bottom: 15px;
+}
 
-            text-align: center;
-        }
+.about-card h3 {
+    margin-bottom: 10px;
+}
 
-        .cta h2 {
-            font-size: clamp(35px, 5vw, 60px);
+.about-card p {
+    color: #89948d;
 
-            margin-bottom: 15px;
-        }
+    font-size: 14px;
+}
 
-        .cta p {
-            color: #9ba69f;
+/* =========================
+   CTA
+========================= */
 
-            margin-bottom: 30px;
-        }
+.cta {
+    text-align: center;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    background:
+        linear-gradient(
+            135deg,
+            #14291b,
+            #08110c
+        );
+}
 
-        footer {
-            padding: 35px 25px;
+.cta h2 {
+    font-size: clamp(36px, 5vw, 60px);
 
-            background: #050b08;
+    margin-bottom: 12px;
+}
 
-            color: #6e7972;
+.cta p {
+    color: #929d96;
 
-            text-align: center;
+    margin-bottom: 25px;
+}
 
-            font-size: 13px;
-        }
+.cta-button {
+    display: inline-flex;
 
-        footer strong {
-            color: #c9a45c;
-        }
+    padding: 15px 25px;
 
-        /* =========================
-           WHATSAPP FLOAT
-        ========================= */
+    background: #c9a45c;
+    color: #111;
 
-        .whatsapp {
-            position: fixed;
+    border-radius: 8px;
 
-            right: 22px;
-            bottom: 22px;
+    font-weight: bold;
 
-            width: 58px;
-            height: 58px;
+    cursor: pointer;
+}
 
-            border-radius: 50%;
+/* =========================
+   FOOTER
+========================= */
 
-            background: #25D366;
+footer {
+    background: #050b08;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    text-align: center;
 
-            font-size: 27px;
+    padding: 30px;
 
-            z-index: 100;
+    color: #657068;
 
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.4);
+    font-size: 13px;
+}
 
-            transition: 0.3s;
-        }
+footer strong {
+    color: #c9a45c;
+}
 
-        .whatsapp:hover {
-            transform: scale(1.08);
-        }
+/* =========================
+   FLOAT WHATSAPP
+========================= */
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+.whatsapp {
+    position: fixed;
 
-        @media (max-width: 900px) {
+    right: 18px;
+    bottom: 18px;
 
-            .nav-links {
-                display: none;
-            }
+    width: 57px;
+    height: 57px;
 
-            .hero-container {
-                grid-template-columns: 1fr;
+    border-radius: 50%;
 
-                text-align: center;
-            }
+    background: #25D366;
 
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            .hero-buttons {
-                justify-content: center;
-            }
+    font-size: 27px;
 
-            .tea-visual {
-                min-height: 330px;
-            }
+    z-index: 9000;
 
-            .tea-circle {
-                width: 280px;
-                height: 280px;
-            }
+    box-shadow: 0 8px 30px rgba(0,0,0,.4);
 
-            .teapot {
-                font-size: 110px;
-            }
+    touch-action: manipulation;
+}
 
-            .products {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
+/* =========================
+   CART OVERLAY
+========================= */
 
-            .about {
-                grid-template-columns: 1fr;
-            }
-        }
+.cart-overlay {
+    position: fixed;
 
-        @media (max-width: 600px) {
+    inset: 0;
 
-            .nav {
-                height: 65px;
-            }
+    background: rgba(0,0,0,.65);
 
-            .logo {
-                font-size: 18px;
-            }
+    z-index: 20000;
 
-            .contact-button {
-                padding: 9px 13px;
-                font-size: 12px;
-            }
+    opacity: 0;
+    visibility: hidden;
 
-            .hero {
-                padding-top: 110px;
-            }
+    transition: .25s;
+}
 
-            .hero h1 {
-                letter-spacing: -2px;
-            }
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
 
-            .hero p {
-                font-size: 15px;
-            }
+.cart {
+    position: absolute;
 
-            .products {
-                grid-template-columns: 1fr;
-            }
+    right: 0;
+    top: 0;
 
-            section {
-                padding: 70px 18px;
-            }
+    width: min(450px, 100%);
 
-            .product {
-                min-height: 350px;
-            }
-        }
-    </style>
+    height: 100%;
+
+    background: #09130e;
+
+    border-left: 1px solid #293b30;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(100%);
+
+    transition: .3s;
+}
+
+.cart-overlay.active .cart {
+    transform: translateX(0);
+}
+
+.cart-header {
+    height: 75px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #203026;
+}
+
+.cart-header h2 {
+    font-size: 22px;
+}
+
+.close-cart {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 1px solid #35463c;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.cart-items {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px;
+}
+
+.empty-cart {
+    text-align: center;
+
+    color: #727d76;
+
+    padding-top: 80px;
+}
+
+.cart-item {
+    padding: 16px 0;
+
+    border-bottom: 1px solid #1d2b23;
+}
+
+.cart-item-top {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #c9a45c;
+
+    white-space: nowrap;
+}
+
+.cart-item-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.quantity-button {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 6px;
+
+    border: 1px solid #394a40;
+
+    background: #111e17;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.quantity {
+    min-width: 25px;
+
+    text-align: center;
+}
+
+.remove-item {
+    margin-left: auto;
+
+    background: transparent;
+
+    border: 0;
+
+    color: #9b6d6d;
+
+    cursor: pointer;
+}
+
+.cart-footer {
+    border-top: 1px solid #24352b;
+
+    padding: 20px;
+}
+
+.total {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.total span:last-child {
+    color: #d5b36c;
+}
+
+.order-cart {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #c9a45c;
+
+    color: #111;
+
+    font-weight: 900;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+.order-cart:active {
+    transform: scale(.98);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-link {
+        display: none;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .tea-visual {
+        min-height: 280px;
+    }
+
+    .tea-circle {
+        width: 270px;
+        height: 270px;
+    }
+
+    .teapot {
+        font-size: 100px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        height: 62px;
+    }
+
+    .nav {
+        height: 62px;
+
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .cart-button {
+        padding: 9px 13px;
+    }
+
+    .hero {
+        padding-top: 105px;
+
+        min-height: auto;
+
+        padding-bottom: 45px;
+    }
+
+    .hero h1 {
+        font-size: 62px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .hero-button {
+        width: 100%;
+
+        min-height: 54px;
+
+        font-size: 15px;
+    }
+
+    .tea-visual {
+        display: none;
+    }
+
+    section {
+        padding: 65px 15px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .product {
+        min-height: 340px;
+
+        padding: 22px;
+    }
+
+    .about {
+        gap: 12px;
+    }
+
+    .about-card {
+        padding: 24px;
+    }
+
+    .whatsapp {
+        width: 54px;
+        height: 54px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .cart {
+        width: 100%;
+    }
+}
+
+</style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      HEADER
@@ -716,27 +984,36 @@
             ЧАЙНЫЙ <span>ТОРЧ</span>
         </a>
 
-        <div class="nav-links">
+        <div class="nav-right">
 
-            <a href="#catalog">
+            <a
+                href="#catalog"
+                class="nav-link"
+            >
                 Каталог
             </a>
 
-            <a href="#about">
-                О нас
-            </a>
-
-            <a href="#contact">
-                Контакты
-            </a>
-
-            <a
-                href="https://wa.me/77766632330"
-                target="_blank"
-                class="contact-button"
+            <button
+                class="nav-contact"
+                onclick="openWhatsApp()"
             >
-                Связаться с нами
-            </a>
+                WhatsApp
+            </button>
+
+            <button
+                class="cart-button"
+                onclick="openCart()"
+            >
+                🛒 Корзина
+
+                <span
+                    id="cartCount"
+                    class="cart-count"
+                >
+                    0
+                </span>
+
+            </button>
 
         </div>
 
@@ -749,17 +1026,15 @@
      HERO
 ========================= -->
 
-<main>
-
 <section class="hero">
 
     <div class="hero-container">
 
         <div>
 
-            <span class="hero-label">
+            <div class="hero-label">
                 КИТАЙСКИЙ ЧАЙ • КАЗАХСТАН
-            </span>
+            </div>
 
             <h1>
                 Чайный<br>
@@ -769,26 +1044,27 @@
             <p>
                 Китайский чай с характером.
                 Пуэры, улуны и GABA —
-                для тех, кто хочет чувствовать вкус,
-                а не просто пить чай.
+                выбирай свой чай и собирай заказ.
             </p>
+
 
             <div class="hero-buttons">
 
-                <a
-                    href="#catalog"
-                    class="main-button"
+                <button
+                    type="button"
+                    class="hero-button hero-primary"
+                    onclick="goToCatalog()"
                 >
                     Смотреть чай
-                </a>
+                </button>
 
-                <a
-                    href="https://wa.me/77766632330"
-                    target="_blank"
-                    class="second-button"
+                <button
+                    type="button"
+                    class="hero-button hero-secondary"
+                    onclick="openWhatsApp()"
                 >
                     Написать в WhatsApp
-                </a>
+                </button>
 
             </div>
 
@@ -798,10 +1074,6 @@
         <div class="tea-visual">
 
             <div class="tea-circle">
-
-                <div class="steam">
-                    〰
-                </div>
 
                 <div class="teapot">
                     🫖
@@ -824,20 +1096,20 @@
 
     <div class="section-container">
 
-        <div class="section-heading">
+        <div class="section-title">
 
             <small>
-                НАША ПОДБОРКА
+                НАШ КАТАЛОГ
             </small>
 
             <h2>
-                Чай, который<br>
-                хочется заварить.
+                Выбирай свой чай.
             </h2>
 
             <p>
-                Собрали разные характеры китайского чая —
-                от лёгкого Тигуаньиня до выдержанного Шу Пуэра.
+                Добавляй понравившиеся позиции
+                в корзину, а когда закончишь —
+                оформляй заказ одним сообщением.
             </p>
 
         </div>
@@ -846,7 +1118,7 @@
         <div class="products">
 
 
-            <!-- PRODUCT 1 -->
+            <!-- TIGUANIN -->
 
             <article class="product">
 
@@ -858,29 +1130,32 @@
                     Тигуаньинь
                 </h3>
 
-                <p>
-                    Ароматный китайский улун с мягким
-                    цветочным профилем. Свежий,
-                    приятный и универсальный чай
-                    на каждый день.
+                <p class="product-description">
+                    Ароматный китайский улун
+                    с цветочными и свежими нотами.
+                    Лёгкий и приятный чай на каждый день.
                 </p>
 
                 <div class="product-price">
                     5 000 ₸
-                    <small>/ 100 г</small>
+                    <span>/ 100 г</span>
                 </div>
 
                 <button
-                    class="order-button"
-                    onclick="order('Тигуаньинь 100 г — 5 000 ₸')"
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Тигуаньинь',
+                        5000,
+                        '100 г'
+                    )"
                 >
-                    Заказать
+                    🛒 Добавить в корзину
                 </button>
 
             </article>
 
 
-            <!-- PRODUCT 2 -->
+            <!-- DA HONG PAO -->
 
             <article class="product">
 
@@ -892,28 +1167,32 @@
                     Да Хун Пао
                 </h3>
 
-                <p>
-                    Классический китайский улун
-                    с глубоким ароматом, древесными
-                    и слегка жареными оттенками.
+                <p class="product-description">
+                    Китайский улун с глубоким
+                    ароматом и насыщенным
+                    древесно-жареным профилем.
                 </p>
 
                 <div class="product-price">
                     6 000 ₸
-                    <small>/ 100 г</small>
+                    <span>/ 100 г</span>
                 </div>
 
                 <button
-                    class="order-button"
-                    onclick="order('Да Хун Пао 100 г — 6 000 ₸')"
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Да Хун Пао',
+                        6000,
+                        '100 г'
+                    )"
                 >
-                    Заказать
+                    🛒 Добавить в корзину
                 </button>
 
             </article>
 
 
-            <!-- PRODUCT 3 -->
+            <!-- GABA -->
 
             <article class="product">
 
@@ -925,28 +1204,32 @@
                     GABA
                 </h3>
 
-                <p>
-                    Особый китайский чай с содержанием
-                    ГАМК около 150 мг на 100 г.
-                    Мягкий вкус и необычный чайный профиль.
+                <p class="product-description">
+                    Особый китайский чай.
+                    Заявленное содержание ГАМК —
+                    150 мг на 100 г.
                 </p>
 
                 <div class="product-price">
                     10 000 ₸
-                    <small>/ 100 г</small>
+                    <span>/ 100 г</span>
                 </div>
 
                 <button
-                    class="order-button"
-                    onclick="order('GABA 100 г — 10 000 ₸')"
+                    class="add-cart"
+                    onclick="addToCart(
+                        'GABA',
+                        10000,
+                        '100 г'
+                    )"
                 >
-                    Заказать
+                    🛒 Добавить в корзину
                 </button>
 
             </article>
 
 
-            <!-- PRODUCT 4 -->
+            <!-- 1985 -->
 
             <article class="product">
 
@@ -955,31 +1238,35 @@
                 </div>
 
                 <h3>
-                    Шу Пуэр 1985
+                    Шу Пуэр 1985 года
                 </h3>
 
-                <p>
-                    Выдержанный Шу Пуэр с глубоким
-                    насыщенным характером. Для тех,
-                    кто ценит возраст и плотность вкуса.
+                <p class="product-description">
+                    Выдержанный Шу Пуэр
+                    с глубоким и насыщенным
+                    чайным характером.
                 </p>
 
                 <div class="product-price">
                     6 000 ₸
-                    <small>/ 100 г</small>
+                    <span>/ 100 г</span>
                 </div>
 
                 <button
-                    class="order-button"
-                    onclick="order('Шу Пуэр 1985 года 100 г — 6 000 ₸')"
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Шу Пуэр 1985 года',
+                        6000,
+                        '100 г'
+                    )"
                 >
-                    Заказать
+                    🛒 Добавить в корзину
                 </button>
 
             </article>
 
 
-            <!-- PRODUCT 5 -->
+            <!-- 1KG -->
 
             <article class="product">
 
@@ -988,31 +1275,35 @@
                 </div>
 
                 <h3>
-                    Шу Пуэр Блинчик
+                    Блинчик 1 кг
                 </h3>
 
-                <p>
-                    Большой чайный блинчик весом 1 кг.
-                    Отличный вариант для домашней
-                    чайной коллекции или регулярных чаепитий.
+                <p class="product-description">
+                    Большой чайный блинчик
+                    весом 1 кг — формат
+                    для настоящих любителей пуэра.
                 </p>
 
                 <div class="product-price">
                     50 000 ₸
-                    <small>/ 1 кг</small>
+                    <span>/ 1 кг</span>
                 </div>
 
                 <button
-                    class="order-button"
-                    onclick="order('Шу Пуэр Блинчик 1 кг — 50 000 ₸')"
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Блинчик',
+                        50000,
+                        '1 кг'
+                    )"
                 >
-                    Заказать
+                    🛒 Добавить в корзину
                 </button>
 
             </article>
 
 
-            <!-- PRODUCT 6 -->
+            <!-- 2006 -->
 
             <article class="product">
 
@@ -1021,31 +1312,35 @@
                 </div>
 
                 <h3>
-                    Шу Пуэр 2006
+                    Шу Пуэр 2006 года
                 </h3>
 
-                <p>
-                    Выдержанный Шу Пуэр 2006 года.
-                    Глубокий, спокойный и насыщенный
-                    чай для неспешных чаепитий.
+                <p class="product-description">
+                    Выдержанный Шу Пуэр
+                    2006 года с плотным,
+                    глубоким профилем.
                 </p>
 
                 <div class="product-price">
                     3 000 ₸
-                    <small>/ 100 г</small>
+                    <span>/ 100 г</span>
                 </div>
 
                 <button
-                    class="order-button"
-                    onclick="order('Шу Пуэр 2006 года 100 г — 3 000 ₸')"
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Шу Пуэр 2006 года',
+                        3000,
+                        '100 г'
+                    )"
                 >
-                    Заказать
+                    🛒 Добавить в корзину
                 </button>
 
             </article>
 
 
-            <!-- PRODUCT 7 -->
+            <!-- 350 -->
 
             <article class="product">
 
@@ -1057,25 +1352,30 @@
                     Блинчик 350 г
                 </h3>
 
-                <p>
-                    Компактный чайный блинчик 350 г —
-                    удобный формат для знакомства
-                    с пуэром или пополнения коллекции.
+                <p class="product-description">
+                    Компактный чайный блинчик
+                    350 г — удобный формат
+                    для знакомства с пуэром.
                 </p>
 
                 <div class="product-price">
                     9 000 ₸
-                    <small>/ 350 г</small>
+                    <span>/ 350 г</span>
                 </div>
 
                 <button
-                    class="order-button"
-                    onclick="order('Чайный Блинчик 350 г — 9 000 ₸')"
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Блинчик',
+                        9000,
+                        '350 г'
+                    )"
                 >
-                    Заказать
+                    🛒 Добавить в корзину
                 </button>
 
             </article>
+
 
         </div>
 
@@ -1088,25 +1388,20 @@
      ABOUT
 ========================= -->
 
-<section id="about">
+<section>
 
     <div class="section-container">
 
-        <div class="section-heading">
+        <div class="section-title">
 
             <small>
                 ЧАЙНЫЙ ТОРЧ
             </small>
 
             <h2>
-                Не просто чай.
+                Просто выбрать.<br>
+                Просто заказать.
             </h2>
-
-            <p>
-                Мы собираем китайский чай для тех,
-                кто хочет открыть для себя настоящее
-                чайное состояние.
-            </p>
 
         </div>
 
@@ -1115,18 +1410,17 @@
 
             <div class="about-card">
 
-                <div class="number">
+                <div class="about-number">
                     01
                 </div>
 
                 <h3>
-                    Китайский чай
+                    Выбираешь
                 </h3>
 
                 <p>
-                    Улуны, пуэры и GABA —
-                    разные сорта для разных
-                    настроений и вкусов.
+                    Добавляешь понравившийся
+                    чай в корзину.
                 </p>
 
             </div>
@@ -1134,18 +1428,17 @@
 
             <div class="about-card">
 
-                <div class="number">
+                <div class="about-number">
                     02
                 </div>
 
                 <h3>
-                    По Казахстану
+                    Собираешь заказ
                 </h3>
 
                 <p>
-                    Заказывайте чай из любой точки
-                    Казахстана. Уточнить доставку
-                    можно через WhatsApp.
+                    Меняешь количество,
+                    добавляешь или удаляешь позиции.
                 </p>
 
             </div>
@@ -1153,18 +1446,18 @@
 
             <div class="about-card">
 
-                <div class="number">
+                <div class="about-number">
                     03
                 </div>
 
                 <h3>
-                    Без заморочек
+                    Получаешь чай
                 </h3>
 
                 <p>
-                    Выбираете чай → нажимаете
-                    «Заказать» → пишете нам
-                    в WhatsApp.
+                    Нажимаешь «Заказать»,
+                    WhatsApp формирует сообщение
+                    со всем заказом.
                 </p>
 
             </div>
@@ -1180,10 +1473,7 @@
      CTA
 ========================= -->
 
-<section
-    class="cta"
-    id="contact"
->
+<section class="cta">
 
     <div class="section-container">
 
@@ -1192,82 +1482,564 @@
         </h2>
 
         <p>
-            Напиши нам — поможем выбрать чай
-            под твой вкус.
+            Есть вопросы по чаю или доставке?
         </p>
 
-        <a
-            href="https://wa.me/77766632330"
-            target="_blank"
-            class="main-button"
+        <button
+            class="cta-button"
+            onclick="openWhatsApp()"
         >
-            Написать в WhatsApp
-        </a>
+            Написать нам
+        </button>
 
     </div>
 
 </section>
 
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
-    <p>
-        © 2026 <strong>ЧАЙНЫЙ ТОРЧ</strong>
-    </p>
-
-    <p>
-        Китайский чай • Казахстан
-    </p>
+    © 2026 <strong>ЧАЙНЫЙ ТОРЧ</strong><br>
+    Китайский чай • Казахстан
 
 </footer>
 
 
 <!-- =========================
-     WHATSAPP FLOAT
+     FLOAT WHATSAPP
 ========================= -->
 
 <a
     href="https://wa.me/77766632330"
-    target="_blank"
     class="whatsapp"
-    aria-label="WhatsApp"
+    target="_blank"
 >
     ☎
 </a>
 
 
 <!-- =========================
-     JAVASCRIPT
+     CART
 ========================= -->
+
+<div
+    id="cartOverlay"
+    class="cart-overlay"
+    onclick="closeCartOutside(event)"
+>
+
+    <div class="cart">
+
+        <div class="cart-header">
+
+            <h2>
+                🛒 Корзина
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div
+            id="cartItems"
+            class="cart-items"
+        >
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total">
+
+                <span>
+                    Итого:
+                </span>
+
+                <span id="cartTotal">
+                    0 ₸
+                </span>
+
+            </div>
+
+            <button
+                class="order-cart"
+                onclick="orderCart()"
+            >
+                Заказать через WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 <script>
 
-    function order(productName) {
+/* =========================================
+   НАСТРОЙКИ
+========================================= */
 
-        const phone = "77766632330";
+const WHATSAPP_NUMBER = "77766632330";
 
-        const message =
-            "Привет! Хочу заказать: " +
-            productName +
-            ". Подскажите, пожалуйста, по наличию и доставке.";
+let cart = [];
 
-        const url =
-            "https://wa.me/" +
-            phone +
-            "?text=" +
-            encodeURIComponent(message);
 
-        window.open(url, "_blank");
+/* =========================================
+   ПЕРЕЙТИ К КАТАЛОГУ
+========================================= */
+
+function goToCatalog() {
+
+    document
+        .getElementById("catalog")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================================
+   ОТКРЫТЬ WHATSAPP
+========================================= */
+
+function openWhatsApp() {
+
+    const message =
+        "Здравствуйте! Хочу узнать подробнее о чае Чайный Торч.";
+
+    const url =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+}
+
+
+/* =========================================
+   ДОБАВИТЬ ТОВАР
+========================================= */
+
+function addToCart(name, price, weight) {
+
+    const existing =
+        cart.find(
+            item =>
+                item.name === name &&
+                item.weight === weight
+        );
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+            name: name,
+            price: price,
+            weight: weight,
+            quantity: 1
+        });
+
     }
+
+    saveCart();
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* =========================================
+   СОХРАНИТЬ КОРЗИНУ
+========================================= */
+
+function saveCart() {
+
+    localStorage.setItem(
+        "chainyTorchCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* =========================================
+   ЗАГРУЗИТЬ КОРЗИНУ
+========================================= */
+
+function loadCart() {
+
+    const saved =
+        localStorage.getItem(
+            "chainyTorchCart"
+        );
+
+    if (saved) {
+
+        try {
+
+            cart = JSON.parse(saved);
+
+        } catch {
+
+            cart = [];
+
+        }
+
+    }
+
+}
+
+
+/* =========================================
+   ОБНОВИТЬ КОРЗИНУ
+========================================= */
+
+function updateCart() {
+
+    const container =
+        document.getElementById(
+            "cartItems"
+        );
+
+    const countElement =
+        document.getElementById(
+            "cartCount"
+        );
+
+    const totalElement =
+        document.getElementById(
+            "cartTotal"
+        );
+
+
+    if (cart.length === 0) {
+
+        container.innerHTML = `
+            <div class="empty-cart">
+                <div style="font-size:45px;">
+                    🛒
+                </div>
+
+                <br>
+
+                Корзина пока пустая.
+                <br><br>
+
+                Добавь свой первый чай.
+            </div>
+        `;
+
+    } else {
+
+        container.innerHTML = "";
+
+        cart.forEach(
+            (item, index) => {
+
+                const itemTotal =
+                    item.price *
+                    item.quantity;
+
+                container.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <div class="cart-item-top">
+
+                            <div>
+                                <div class="cart-item-name">
+                                    ${item.name}
+                                </div>
+
+                                <div style="
+                                    color:#727d76;
+                                    font-size:12px;
+                                    margin-top:3px;
+                                ">
+                                    ${item.weight}
+                                </div>
+
+                            </div>
+
+                            <div class="cart-item-price">
+                                ${formatPrice(itemTotal)} ₸
+                            </div>
+
+                        </div>
+
+
+                        <div class="cart-item-controls">
+
+                            <button
+                                class="quantity-button"
+                                onclick="changeQuantity(${index}, -1)"
+                            >
+                                −
+                            </button>
+
+
+                            <span class="quantity">
+                                ${item.quantity}
+                            </span>
+
+
+                            <button
+                                class="quantity-button"
+                                onclick="changeQuantity(${index}, 1)"
+                            >
+                                +
+                            </button>
+
+
+                            <button
+                                class="remove-item"
+                                onclick="removeFromCart(${index})"
+                            >
+                                Удалить
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+    }
+
+
+    let totalQuantity = 0;
+
+    let totalPrice = 0;
+
+
+    cart.forEach(item => {
+
+        totalQuantity +=
+            item.quantity;
+
+        totalPrice +=
+            item.price *
+            item.quantity;
+
+    });
+
+
+    countElement.textContent =
+        totalQuantity;
+
+
+    countElement.style.display =
+        totalQuantity > 0
+            ? "flex"
+            : "none";
+
+
+    totalElement.textContent =
+        formatPrice(totalPrice) +
+        " ₸";
+
+}
+
+
+/* =========================================
+   ФОРМАТ ЦЕНЫ
+========================================= */
+
+function formatPrice(number) {
+
+    return number
+        .toLocaleString("ru-RU");
+
+}
+
+
+/* =========================================
+   ИЗМЕНЕНИЕ КОЛИЧЕСТВА
+========================================= */
+
+function changeQuantity(index, change) {
+
+    cart[index].quantity += change;
+
+
+    if (cart[index].quantity <= 0) {
+
+        cart.splice(index, 1);
+
+    }
+
+
+    saveCart();
+
+    updateCart();
+
+}
+
+
+/* =========================================
+   УДАЛИТЬ ТОВАР
+========================================= */
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    saveCart();
+
+    updateCart();
+
+}
+
+
+/* =========================================
+   ОТКРЫТЬ КОРЗИНУ
+========================================= */
+
+function openCart() {
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =========================================
+   ЗАКРЫТЬ КОРЗИНУ
+========================================= */
+
+function closeCart() {
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================================
+   ЗАКРЫТИЕ ПО ФОНУ
+========================================= */
+
+function closeCartOutside(event) {
+
+    if (
+        event.target.id ===
+        "cartOverlay"
+    ) {
+
+        closeCart();
+
+    }
+
+}
+
+
+/* =========================================
+   ЗАКАЗ
+========================================= */
+
+function orderCart() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Сначала добавьте товары в корзину."
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "Здравствуйте! Хочу оформить заказ в Чайный Торч:%0A%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach(
+        (item, index) => {
+
+            const itemTotal =
+                item.price *
+                item.quantity;
+
+            total += itemTotal;
+
+
+            message +=
+                `${index + 1}. ` +
+                `${item.name} ` +
+                `(${item.weight}) — ` +
+                `${item.quantity} шт. — ` +
+                `${formatPrice(itemTotal)} ₸%0A`;
+
+        }
+    );
+
+
+    message +=
+        "%0AИтого: " +
+        formatPrice(total) +
+        " ₸";
+
+
+    message +=
+        "%0A%0AПодскажите, пожалуйста, по наличию и доставке.";
+
+
+    const url =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        message;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================
+   ЗАПУСК
+========================================= */
+
+loadCart();
+
+updateCart();
 
 </script>
 
+
 </body>
 </html>
-```
