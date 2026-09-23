@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17271b">
+  <meta name="description" content="Чайный Торч — китайский чай в Казахстане">
+  <title>Чайный Торч — китайский чай</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="leaf-decor leaf-a">🍃</div>
+  <div class="leaf-decor leaf-b">🌿</div>
+  <div class="leaf-decor leaf-c">🍂</div>
+  <div class="leaf-decor leaf-d">🍃</div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">
+        <span>ЧАЙНЫЙ</span>
+        <strong>ТОРЧ</strong>
+      </a>
+
+      <nav class="nav">
+        <a href="#catalog">Чай</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-right">
+        <a class="header-wa" href="https://wa.me/77766632330" target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+        <button class="cart-button" id="openCart" type="button">
+          <span>Корзина</span>
+          <b id="cartCount">0</b>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <div class="hand-note">китайский чай • Казахстан</div>
+
+          <h1>
+            Чай, который<br>
+            хочется <em>заварить.</em>
+          </h1>
+
+          <p>
+            Пуэры, улуны и GABA. Не музейная витрина —
+            нормальный чай, который хочется пить с друзьями,
+            дома и после тяжёлого дня.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#catalog" class="button button-gold">Смотреть чай</a>
+            <a href="https://wa.me/77766632330?text=Здравствуйте!%20Хочу%20узнать%20про%20чай%20Чайный%20Торч." class="button button-outline" target="_blank" rel="noopener">
+              Написать нам
+            </a>
+          </div>
+
+          <div class="hero-facts">
+            <span>01 <b>Китайский чай</b></span>
+            <span>02 <b>От 100 г</b></span>
+            <span>03 <b>Заказ в WhatsApp</b></span>
+          </div>
+        </div>
+
+        <div class="hero-scene">
+          <div class="paper-card">
+            <div class="stamp">茶</div>
+            <span class="scene-small">ЧАЙНЫЙ ТОРЧ</span>
+            <h2>Настоящий<br><i>чайный движ.</i></h2>
+            <p>лист • вода • время</p>
+          </div>
+
+          <div class="tea-bowl">
+            <div class="tea-liquid"></div>
+            <div class="tea-rim"></div>
+            <div class="tea-steam steam-1"></div>
+            <div class="tea-steam steam-2"></div>
+          </div>
+
+          <div class="loose-leaves">
+            <i>🍃</i><i>🍃</i><i>🍂</i><i>🍃</i><i>🌿</i>
+          </div>
+
+          <div class="wood-tag">品茶<br><small>drink tea</small></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="marquee">
+      <div>
+        <span>ПУЭР</span><b>✦</b>
+        <span>УЛУН</span><b>✦</b>
+        <span>GABA</span><b>✦</b>
+        <span>КИТАЙСКИЙ ЧАЙ</span><b>✦</b>
+        <span>ПУЭР</span><b>✦</b>
+        <span>УЛУН</span><b>✦</b>
+      </div>
+    </section>
+
+    <section class="catalog section" id="catalog">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">КАТАЛОГ</span>
+            <h2>Выбирай,<br><i>что заварим.</i></h2>
+          </div>
+          <p>
+            Собери корзину как хочешь. Количество меняется прямо
+            в корзине, а готовый заказ одним нажатием улетает нам в WhatsApp.
+          </p>
+        </div>
+
+        <div class="product-grid" id="products"></div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <div class="fake-photo">
+            <span>茶</span>
+            <div class="fake-cup"></div>
+            <div class="fake-leaf leaf-1">🍃</div>
+            <div class="fake-leaf leaf-2">🍂</div>
+            <div class="fake-leaf leaf-3">🌿</div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">НЕ ПРОСТО ЧАЙ</span>
+          <h2>Заваривай.<br><i>Не усложняй.</i></h2>
+          <p>
+            «Чайный Торч» — это про хороший китайский чай без ощущения,
+            что ты попал в музей. Взял чай, прогрел посуду, залил водой —
+            и дальше уже начинается самое интересное.
+          </p>
+          <p>
+            Мы собрали понятный ассортимент: от лёгкого Тегуаньиня
+            до плотного Шу Пуэра и GABA.
+          </p>
+          <a href="#catalog" class="text-link">Смотреть каталог →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts section" id="contacts">
+      <div class="container contact-box">
+        <div>
+          <span class="eyebrow">ЕСТЬ ВОПРОС?</span>
+          <h2>Напиши нам<br><i>в WhatsApp.</i></h2>
+        </div>
+        <a class="button button-gold big-button"
+           href="https://wa.me/77766632330?text=Здравствуйте!%20Хочу%20подобрать%20китайский%20чай."
+           target="_blank" rel="noopener">
+          +7 776 663 23 30 →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="logo">
+        <span>ЧАЙНЫЙ</span>
+        <strong>ТОРЧ</strong>
+      </div>
+      <p>Китайский чай • Казахстан</p>
+      <p>+7 776 663 23 30</p>
+    </div>
+  </footer>
+
+  <!-- CART -->
+  <div class="cart-overlay" id="cartOverlay">
+    <aside class="cart-drawer">
+      <div class="cart-header">
+        <div>
+          <span class="eyebrow">ВАШ ЗАКАЗ</span>
+          <h2>Корзина</h2>
+        </div>
+        <button class="close-button" id="closeCart" type="button">×</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Итого</span>
+          <strong id="cartTotal">0 ₸</strong>
+        </div>
+
+        <button class="checkout-button" id="checkout" type="button">
+          Заказать через WhatsApp
+        </button>
+
+        <p class="cart-hint">
+          WhatsApp откроется с уже готовым списком заказа.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- IMAGE MODAL -->
+  <div class="image-modal" id="imageModal">
+    <button class="modal-close" id="modalClose" type="button">×</button>
+    <img id="modalImage" src="" alt="">
+    <h3 id="modalTitle"></h3>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const WHATSAPP = "77766632330";
+    const CART_KEY = "chainy_torch_cart_v2";
+
+    const products = [
+      {
+        id: 1,
+        name: "Тигуаньинь",
+        category: "УЛУН",
+        price: 5000,
+        weight: 100,
+        image: "images/tieguanyin.jpg",
+        description: "Цветочный, свежий улун с мягким ароматом и чистым послевкусием."
+      },
+      {
+        id: 2,
+        name: "Да Хун Пао",
+        category: "УЛУН",
+        price: 6000,
+        weight: 100,
+        image: "images/dahongpao.jpg",
+        description: "Насыщенный улун с тёплыми древесными и слегка жареными нотами."
+      },
+      {
+        id: 3,
+        name: "GABA",
+        category: "GABA • 150 ГАМК",
+        price: 10000,
+        weight: 100,
+        image: "images/gaba.jpg",
+        description: "Мягкий GABA-чай с заявленным содержанием 150 мг ГАМК на 100 г."
+      },
+      {
+        id: 4,
+        name: "Шу Пуэр 1985 года",
+        category: "ШУ ПУЭР",
+        price: 6000,
+        weight: 100,
+        image: "images/shu1985.jpg",
+        description: "Глубокий выдержанный профиль, плотный вкус и спокойное послевкусие."
+      },
+      {
+        id: 5,
+        name: "Блинчик 1 кг",
+        category: "ПУЭР",
+        price: 50000,
+        weight: 1000,
+        image: "images/puer1kg.jpg",
+        description: "Большой чайный блинчик на 1 кг — формат для постоянного чаепития."
+      },
+      {
+        id: 6,
+        name: "Шу Пуэр 2006 года",
+        category: "ШУ ПУЭР",
+        price: 3000,
+        weight: 100,
+        image: "images/shu2006.jpg",
+        description: "Выдержанный Шу Пуэр с тёмным настоем и плотным чайным характером."
+      },
+      {
+        id: 7,
+        name: "Блинчик 350 г",
+        category: "ПУЭР",
+        price: 9000,
+        weight: 350,
+        image: "images/puer350.jpg",
+        description: "Компактный блинчик 350 г — удобный вариант для знакомства с пуэром."
+      }
+    ];
+
+    let cart = [];
+
+    try {
+      cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    } catch (error) {
+      cart = [];
+    }
+
+    const money = value =>
+      new Intl.NumberFormat("ru-RU").format(value) + " ₸";
+
+    const formatWeight = grams =>
+      grams >= 1000
+        ? (grams / 1000).toString().replace(".", ",") + " кг"
+        : grams + " г";
+
+    function saveCart() {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function getProduct(id) {
+      return products.find(product => product.id === id);
+    }
+
+    function renderProducts() {
+      const container = document.getElementById("products");
+
+      container.innerHTML = products.map((product, index) => `
+        <article class="product-card" style="--delay:${index * 70}ms">
+          <div class="product-image-wrap">
+            <img
+              class="product-image"
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+              onerror="this.classList.add('image-missing')"
+            >
+
+            <button
+              class="image-zoom"
+              type="button"
+              data-image="${product.image}"
+              data-title="${product.name}"
+              aria-label="Увеличить фото">
+              +
+            </button>
+
+            <span class="product-number">0${index + 1}</span>
+          </div>
+
+          <div class="product-info">
+            <span class="product-category">${product.category}</span>
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+
+            <div class="product-bottom">
+              <div>
+                <strong>${money(product.price)}</strong>
+                <small>/ ${formatWeight(product.weight)}</small>
+              </div>
+
+              <button class="add-button" type="button" data-add="${product.id}">
+                + В корзину
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      document.querySelectorAll("[data-add]").forEach(button => {
+        button.addEventListener("click", () => addToCart(Number(button.dataset.add)));
+      });
+
+      document.querySelectorAll(".image-zoom").forEach(button => {
+        button.addEventListener("click", () => {
+          openImage(button.dataset.image, button.dataset.title);
+        });
+      });
+    }
+
+    function addToCart(id) {
+      const existing = cart.find(item => item.id === id);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id, quantity: 1 });
+      }
+
+      saveCart();
+      renderCart();
+      showToast(getProduct(id).name + " добавлен в корзину");
+    }
+
+    function changeQuantity(id, change) {
+      const item = cart.find(item => item.id === id);
+
+      if (!item) return;
+
+      item.quantity += change;
+
+      if (item.quantity <= 0) {
+        cart = cart.filter(cartItem => cartItem.id !== id);
+      }
+
+      saveCart();
+      renderCart();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      saveCart();
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById("cartItems");
+      const cartCount = document.getElementById("cartCount");
+      const cartTotal = document.getElementById("cartTotal");
+
+      const totalQuantity = cart.reduce(
+        (sum, item) => sum + item.quantity,
+        0
+      );
+
+      cartCount.textContent = totalQuantity;
+      cartCount.classList.toggle("visible", totalQuantity > 0);
+
+      if (!cart.length) {
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            <div class="empty-icon">🍵</div>
+            <h3>Корзина пустая</h3>
+            <p>Выбери чай из каталога — он появится здесь.</p>
+          </div>
+        `;
+        cartTotal.textContent = "0 ₸";
+        return;
+      }
+
+      let total = 0;
+
+      cartItems.innerHTML = cart.map(item => {
+        const product = getProduct(item.id);
+        const itemTotal = product.price * item.quantity;
+        const itemWeight = product.weight * item.quantity;
+
+        total += itemTotal;
+
+        return `
+          <div class="cart-item">
+            <img src="${product.image}" alt="${product.name}">
+
+            <div class="cart-item-main">
+              <div class="cart-item-top">
+                <div>
+                  <h3>${product.name}</h3>
+                  <span>${formatWeight(itemWeight)}</span>
+                </div>
+                <strong>${money(itemTotal)}</strong>
+              </div>
+
+              <div class="cart-item-actions">
+                <div class="quantity">
+                  <button type="button" data-minus="${product.id}">−</button>
+                  <b>${item.quantity}</b>
+                  <button type="button" data-plus="${product.id}">+</button>
+                </div>
+
+                <button
+                  class="remove-item"
+                  type="button"
+                  data-remove="${product.id}">
+                  удалить
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      cartTotal.textContent = money(total);
+
+      document.querySelectorAll("[data-plus]").forEach(button => {
+        button.addEventListener("click", () =>
+          changeQuantity(Number(button.dataset.plus), 1)
+        );
+      });
+
+      document.querySelectorAll("[data-minus]").forEach(button => {
+        button.addEventListener("click", () =>
+          changeQuantity(Number(button.dataset.minus), -1)
+        );
+      });
+
+      document.querySelectorAll("[data-remove]").forEach(button => {
+        button.addEventListener("click", () =>
+          removeFromCart(Number(button.dataset.remove))
+        );
+      });
+    }
+
+    function openCart() {
+      document.getElementById("cartOverlay").classList.add("open");
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeCart() {
+      document.getElementById("cartOverlay").classList.remove("open");
+      document.body.classList.remove("no-scroll");
+    }
+
+    function checkout() {
+      if (!cart.length) {
+        showToast("Сначала добавь товары в корзину");
+        return;
+      }
+
+      let total = 0;
+      const lines = [
+        "Здравствуйте! Хочу оформить заказ в «Чайный Торч».",
+        ""
+      ];
+
+      cart.forEach((item, index) => {
+        const product = getProduct(item.id);
+        const price = product.price * item.quantity;
+        const weight = product.weight * item.quantity;
+
+        total += price;
+
+        lines.push(
+          `${index + 1}. ${product.name}`,
+          `Количество: ${item.quantity}`,
+          `Вес: ${formatWeight(weight)}`,
+          `Стоимость: ${money(price)}`,
+          ""
+        );
+      });
+
+      lines.push(`ИТОГО: ${money(total)}`);
+      lines.push("");
+      lines.push("Подскажите, пожалуйста, по наличию и доставке.");
+
+      const whatsappUrl =
+        "https://wa.me/" +
+        WHATSAPP +
+        "?text=" +
+        encodeURIComponent(lines.join("\n"));
+
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }
+
+    function openImage(src, title) {
+      const modal = document.getElementById("imageModal");
+      const image = document.getElementById("modalImage");
+
+      image.src = src;
+      image.alt = title;
+      document.getElementById("modalTitle").textContent = title;
+
+      modal.classList.add("open");
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeImage() {
+      document.getElementById("imageModal").classList.remove("open");
+      document.body.classList.remove("no-scroll");
+    }
+
+    let toastTimer;
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2200);
+    }
+
+    document.getElementById("openCart").addEventListener("click", openCart);
+    document.getElementById("closeCart").addEventListener("click", closeCart);
+    document.getElementById("checkout").addEventListener("click", checkout);
+
+    document.getElementById("cartOverlay").addEventListener("click", event => {
+      if (event.target === document.getElementById("cartOverlay")) {
+        closeCart();
+      }
+    });
+
+    document.getElementById("modalClose").addEventListener("click", closeImage);
+
+    document.getElementById("imageModal").addEventListener("click", event => {
+      if (event.target === document.getElementById("imageModal")) {
+        closeImage();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeCart();
+        closeImage();
+      }
+    });
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
